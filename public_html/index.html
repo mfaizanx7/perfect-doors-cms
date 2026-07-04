@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Sifency">
+  <!-- Favicon Icon -->
+  <link rel="icon" href="assets/img/logo.png">
+  <!-- Site Title -->
+  <title>Perfect Doors - Premium Interior Solutions in Saudi Arabia</title>
+  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/owl.carousel.css">
+  <link rel="stylesheet" href="assets/css/plugins/owl.theme.default.css">
+  <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/aos.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Custom Hero Text Styles -->
+  <style>
+    .h-container h1 {
+      word-break: keep-all !important;
+      overflow-wrap: normal !important;
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      -ms-hyphens: none !important;
+    }
+
+    .h-container h1 .letters {
+      display: block;
+      word-break: keep-all !important;
+      white-space: normal !important;
+      overflow-wrap: normal !important;
+    }
+
+    /* Initial Popup Styles */
+    .initial-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(130, 32, 79, 0.9);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+    }
+
+    .initial-popup.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popup-content {
+      position: relative;
+      background: #181818;
+      border: 2px solid #82204F;
+      border-radius: 20px;
+      padding: 60px 40px;
+      text-align: center;
+      max-width: 500px;
+      animation: popupSlideIn 0.6s ease-out;
+    }
+
+    @keyframes popupSlideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .popup-icon {
+      margin-bottom: 30px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    .popup-title {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .popup-subtitle {
+      font-family: "Inter", sans-serif;
+      font-size: 1.2rem;
+      color: #82204F;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .popup-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #82204F;
+      border: 2px solid #82204F;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #fff;
+      z-index: 10;
+    }
+
+    .popup-close-btn:hover {
+      background: #B71C1C;
+      border-color: #B71C1C;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    /* Core Values & Mission Styles */
+    .hero-core-values {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .core-values-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      color: #82204F;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .core-values-list {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .core-value-item {
+      font-family: "Inter", sans-serif;
+      font-size: 1.2rem;
+      color: #fff;
+      padding: 10px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .core-value-item:hover {
+      border-color: #82204F;
+      background: rgba(130, 32, 79, 0.1);
+    }
+
+    .mission-statement {
+      font-family: "Inter", sans-serif;
+      font-size: 1.1rem;
+      color: #d0d0d0;
+      line-height: 1.8;
+      max-width: 700px;
+      font-style: italic;
+    }
+
+    /* CEO Message Section Styles */
+    .ceo-image {
+      padding-right: 40px;
+    }
+
+    .ceo-image img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 10px 30px rgba(130, 32, 79, 0.3);
+    }
+
+    .ceo-message-content {
+      padding-left: 40px;
+    }
+
+    .ceo-message-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #d0d0d0;
+    }
+
+    .ceo-signature {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media screen and (max-width: 991px) {
+      .ceo-image {
+        padding-right: 0;
+        padding-bottom: 30px;
+      }
+      .ceo-message-content {
+        padding-left: 0;
+      }
+    }
+
+    /* History Section Styles */
+    .history-item {
+      background: #0e0e0e;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border-left: 3px solid #82204F;
+      transition: all 0.3s ease;
+    }
+
+    .history-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(130, 32, 79, 0.2);
+    }
+
+    .history-year {
+      font-family: "Playfair Display", serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #82204F;
+      margin-bottom: 15px;
+    }
+
+    .history-item h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .history-item p {
+      font-size: 1rem;
+      color: #d0d0d0;
+      line-height: 1.6;
+    }
+
+    /* Product Excellence Section Styles */
+    .product-excellence-image img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 10px 30px rgba(130, 32, 79, 0.3);
+    }
+
+    .product-excellence-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #d0d0d0;
+    }
+
+    .product-excellence-content strong {
+      color: #82204F;
+    }
+
+    /* FAQ Section Styles */
+    .faq-section {
+      background: #0e0e0e;
+    }
+
+    .faq-item {
+      background: #181818;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: #82204F;
+    }
+
+    .faq-question {
+      padding: 25px 30px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      color: #fff;
+      margin: 0;
+    }
+
+    .faq-toggle {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #82204F;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .faq-toggle svg {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-toggle svg {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 30px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 0 30px 25px;
+    }
+
+    .faq-answer p {
+      color: #d0d0d0;
+      line-height: 1.8;
+    }
+
+    /* Newsletter Section Styles */
+    .newsletter-section {
+      background: linear-gradient(135deg, #0e0e0e 0%, #181818 100%);
+      border-top: 2px solid #82204F;
+      border-bottom: 2px solid #82204F;
+    }
+
+    .newsletter-content {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .newsletter-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-content p {
+      font-size: 1.1rem;
+      color: #d0d0d0;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 15px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 30px;
+      background: #181818;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .newsletter-form input:focus {
+      outline: none;
+      border-color: #82204F;
+    }
+
+    .newsletter-form button {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      background: #82204F;
+      color: #fff;
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+      background: #B71C1C;
+    }
+
+    @media screen and (max-width: 768px) {
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Start Preloader-->
+  <div class="loader">
+    <div class="cs-loader-line"></div>
+  </div>
+  <!-- End Preloader-->
+
+  <!-- Start Initial Load Pop-up -->
+  <div id="initial-popup" class="initial-popup">
+    <div class="popup-content">
+      <div class="popup-icon">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="38" stroke="#82204F" stroke-width="2"/>
+          <path d="M40 20V40L55 55" stroke="#82204F" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h2 class="popup-title">16 years of Serving Kingdom</h2>
+      <p class="popup-subtitle">Experience Excellence</p>
+      <button class="popup-close-btn" onclick="closePopup()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- End Initial Load Pop-up -->
+
+  <!-- Start Navbar Section -->
+  <header class="cs-site-navbar cs-navbar-style cs_sticky_header">
+    <div class="container">
+      <div class="cs_main_header">
+        <div class="cs_main_header_in">
+          <div class="cs_main_header_left">
+            <a href="index.html" class="cs_site_branding">
+              <img src="assets/img/logo.png" alt="">
+            </a>
+          </div>
+          <div class="cs_main_header_right">
+            <div class="cs_nav">
+              <ul class="cs_nav_list">
+                <li>
+                  <a href="index.html" class="active">Home</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="about.html">About</a>
+                  <ul>
+                    <li><a href="about.html#who-we-are">About Us</a></li>
+                    <li><a href="about.html#leadership">Leadership</a></li>
+                    <li><a href="about.html#journey">Our Journey</a></li>
+                    <li><a href="about.html#vision-mission">Vision &amp; Mission</a></li>
+                    <li><a href="about.html#values">Core Values</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="services.html">Products</a>
+                  <ul>
+                    <li><a href="services.html#cubicles">Cubicles</a></li>
+                    <li><a href="services.html#lockers">Lockers</a></li>
+                    <li><a href="services.html#cladding">Wall Cladding</a></li>
+                    <li><a href="services.html#lab-kitchen">Laboratory &amp; Kitchen</a></li>
+                    <li><a href="services.html#bathroom">Bathroom</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="portfolio.html">Portfolio</a>
+                  <ul>
+                    <li><a href="portfolio.html">Successful Projects</a></li>
+                    <li><a href="portfolio.html">On-Going Projects</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="contact-us.html">Contact</a>
+                  <ul>
+                    <li><a href="contact-us.html">Contact Form</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                  </ul>
+                </li>
+                <!-- Language Switcher (inside nav for mobile) -->
+                <li class="nav-lang-item">
+                  <div class="language-switcher">
+                    <div class="lang-toggle">
+                      <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                          d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                      </svg>
+                      <span>English</span>
+                      <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </div>
+                    <div class="lang-dropdown">
+                      <a href="index.html" data-lang="en" class="active">
+                        English
+                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </a>
+                      <a href="index-ar.html" data-lang="ar">
+                        العربية
+                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            <button class="search-toggle-btn" onclick="toggleSearch()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Navbar Section -->
+
+  <!-- Search Overlay -->
+  <div id="search-overlay" class="search-overlay">
+    <div class="search-overlay-content">
+      <button class="search-close-btn" onclick="toggleSearch()">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search..." onkeyup="performSearch(event)">
+        <button onclick="performSearch(event)" class="search-submit-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+
+  <!-- Start Hero -->
+  <div class="main-hero">
+    <!-- Background video -->
+    <video class="hero-bg-video" autoplay muted loop playsinline>
+      <source src="assets/Video/hero-background.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 h-container">
+          <h1 class="ml14">
+            <span class="text-wrapper">
+              <span class="letters">Quality You Can<br>Trust</span>
+            </span>
+          </h1>
+          <div class="hero-content">
+            <div class="cs_circle_btn_wrap">
+              <div class="cs_round_btn_wrap">
+                <a href="services.html" class="cs_hero_btn cs_round_btn btn-item"><span></span>Explore Products</a>
+              </div>
+            </div>
+            <div class="hero-subheading">
+              <span></span>
+              <p>Since 2010, Perfect Doors has been Saudi Arabia's trusted partner for high-quality compact laminate
+                solutions — from toilet cubicles to laboratory furniture. As exclusive distributors of leading European
+                brands, we bring world-class materials to your projects.</p>
+            </div>
+            <div class="hero-core-values">
+              <h3 class="core-values-title">Our Core Values</h3>
+              <div class="core-values-list">
+                <span class="core-value-item">Inspiration</span>
+                <span class="core-value-item">Commitment</span>
+                <span class="core-value-item">Quality</span>
+              </div>
+              <p class="mission-statement">16 years of commitment with the nation to serve and inspire them with quality.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Hero -->
+
+  <!-- Start About -->
+  <section>
+    <div class="p-t-10">
+      <div class="container">
+        <div class="row a-about">
+          <div class="col-lg-6">
+            <div class="a-img" data-aos="fade-right" data-aos-duration="1000">
+              <img src="assets/img/about-img-h.png" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="caption">
+              <p><span>Who We Are</span></p>
+            </div>
+            <div class="about-text">
+              <h2 class="ml12" style="font-size: 2.75rem !important;">Premium European Materials for Your Projects</h2>
+              <p class="p-b-2">Perfect Doors Co. began its journey in 2010 with a strong passion to provide quality
+                products and exceptional services. We have been committed to excellence and creativity, introducing
+                innovative solutions with the booming use of compact laminate to enhance modern interiors across Saudi
+                Arabia.</p>
+            </div>
+            <div class="progress-btn">
+              <div class="co-progress">
+                <div class="progress-bar">
+                  <div class="bar">
+                    <h6>IDEA & CONCEPT</h6>
+                  </div>
+                  <div class="progress-line">
+                    <span></span>
+                  </div>
+                </div>
+                <div class="progress-bar cs-pline1">
+                  <div class="bar">
+                    <h6>ARCHITECTURE</h6>
+                  </div>
+                  <div class="progress-line">
+                    <span></span>
+                  </div>
+                </div>
+                <div class="progress-bar cs-pline2">
+                  <div class="bar">
+                    <h6>3D VISUALIZATION</h6>
+                  </div>
+                  <div class="progress-line">
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="cs_circle_btn_wrap">
+                <div class="cs_round_btn_wrap">
+                  <a href="services.html" class="cs_hero_btn cs_round_btn btn-item"><span></span>View Products</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End About -->
+
+  <!-- Start CEO Message -->
+  <section class="p-t-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="caption">
+            <p><span>Leadership</span></p>
+          </div>
+          <h2 class="ml12" style="font-size: 2.75rem !important;">Message from the CEO</h2>
+        </div>
+      </div>
+      <div class="row p-t-5">
+        <div class="col-lg-5">
+          <div class="ceo-image" data-aos="fade-right" data-aos-duration="1000">
+            <img src="assets/img/about-img-h.png" alt="CEO" style="border-radius: 10px;">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="ceo-message-content" data-aos="fade-left" data-aos-duration="1000">
+            <p class="p-b-2">"For over 15 years, Perfect Doors has been at the forefront of bringing innovative compact laminate solutions to Saudi Arabia. Our journey began with a simple vision: to provide world-class quality materials that transform spaces and exceed expectations.</p>
+            <p class="p-b-2">As pioneers in HPL Compact Laminate technology, we have continuously pushed boundaries, introducing the revolutionary 'Complementarity' concept that has redefined market standards. Our commitment to excellence, combined with our partnerships with leading European brands like Polyrey, has enabled us to deliver products that stand the test of time.</p>
+            <p class="p-b-2">Today, we stand proud of our legacy of serving the nation with unwavering dedication. From toilet cubicles to laboratory furniture, from wall cladding to kitchen solutions – every product we offer carries our promise of quality, durability, and innovation.</p>
+            <div class="ceo-signature">
+              <h4 style="color: #82204F;">CEO, Perfect Doors</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End CEO Message -->
+
+  <!-- Start 15 Years History -->
+  <section class="p-t-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="caption">
+            <p><span>Our Journey</span></p>
+          </div>
+          <h2 class="ml12" style="font-size: 2.75rem !important;">15 Years of History - The Brand's Success</h2>
+        </div>
+      </div>
+      <div class="row p-t-5">
+        <div class="col-lg-4 col-sm-6">
+          <div class="history-item" data-aos="fade-up" data-aos-duration="800">
+            <div class="history-year">2010</div>
+            <h4>Foundation</h4>
+            <p>Perfect Doors established with a vision to bring premium compact laminate solutions to Saudi Arabia.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="history-item" data-aos="fade-up" data-aos-duration="1000">
+            <div class="history-year">2015</div>
+            <h4>European Partnership</h4>
+            <p>Became exclusive distributors for leading European brands, expanding our product portfolio.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="history-item" data-aos="fade-up" data-aos-duration="1200">
+            <div class="history-year">2020</div>
+            <h4>Market Leadership</h4>
+            <p>Emerged as market leaders in HPL Compact Laminate solutions across the region.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row p-t-3">
+        <div class="col-lg-6 col-sm-6">
+          <div class="history-item" data-aos="fade-up" data-aos-duration="1000">
+            <div class="history-year">2022</div>
+            <h4>Innovation Launch</h4>
+            <p>Introduced the revolutionary "Complementarity" Concept HPL Compact Laminate.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-6">
+          <div class="history-item" data-aos="fade-up" data-aos-duration="1200">
+            <div class="history-year">2025</div>
+            <h4>Era of Trust & Expansion</h4>
+            <p>Continued growth with enhanced product lines and expanded market presence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End 15 Years History -->
+
+  <!-- Start Product Excellence -->
+  <section class="p-t-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="caption">
+            <p><span>Product Excellence</span></p>
+          </div>
+          <h2 class="ml12" style="font-size: 2.75rem !important;">Pioneer in HPL Compact Laminate</h2>
+        </div>
+      </div>
+      <div class="row p-t-5">
+        <div class="col-lg-6">
+          <div class="product-excellence-content" data-aos="fade-right" data-aos-duration="1000">
+            <p class="p-b-2">Perfect Doors has established itself as the pioneer in HPL Compact Laminate technology in Saudi Arabia. Our commitment to innovation and quality has positioned us at the forefront of the industry.</p>
+            <p class="p-b-2">We are proud to introduce the <strong>"Complementarity" Concept HPL Compact Laminate</strong> – a revolutionary approach that marks the beginning of a new Era of Trust & Market Expansion. This innovative concept redefines how compact laminates can be used across various applications.</p>
+            <p class="p-b-2">As exclusive distributors of Polyrey and other leading European brands, we ensure that our clients receive only the highest quality materials that meet international standards and exceed local requirements.</p>
+            <div class="p-t-2">
+              <a class="primary-btn" href="services.html">Explore Our Products<svg width="15" height="8" viewBox="0 0 15 8"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.4273 4.55668C14.6225 4.36142 14.6225 4.04483 14.4273 3.84957L11.2453 0.667591C11.05 0.472329 10.7335 0.472329 10.5382 0.667591C10.3429 0.862853 10.3429 1.17944 10.5382 1.3747L13.3666 4.20312L10.5382 7.03155C10.3429 7.22681 10.3429 7.5434 10.5382 7.73866C10.7335 7.93392 11.05 7.93392 11.2453 7.73866L14.4273 4.55668ZM0.0737305 4.70312H14.0737V3.70312H0.0737305V4.70312Z"
+                    fill="white" />
+                </svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="product-excellence-image" data-aos="fade-left" data-aos-duration="1000">
+            <img src="assets/img/about-img-h.png" alt="HPL Compact Laminate" style="border-radius: 10px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Product Excellence -->
+
+  <!-- Start FAQ Section -->
+  <section class="faq-section p-t-10 p-b-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="caption">
+            <p><span>Get to Know Us</span></p>
+          </div>
+          <h2 class="ml12" style="font-size: 2.75rem !important;">Get to know Perfect Doors better.</h2>
+        </div>
+      </div>
+      <div class="row p-t-5">
+        <div class="col-lg-12">
+          <div class="faq-item active">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <h4>What sets Polyrey apart from other laminate brands?</h4>
+              <div class="faq-toggle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#82204F" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <p>Polyrey stands out through its commitment to innovation, sustainability, and superior quality. As a leading European brand, Polyrey offers advanced HPL Compact Laminate solutions that combine durability with aesthetic excellence. Their products meet stringent international standards and are designed for diverse applications from healthcare to hospitality.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <h4>Does Perfect Doors work in collaboration with industry professionals?</h4>
+              <div class="faq-toggle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#82204F" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <p>Absolutely. Perfect Doors actively collaborates with architects, designers, contractors, and industry professionals to deliver tailored solutions. We provide technical support, product specifications, and expert guidance throughout project development, ensuring our clients achieve their vision with the best materials.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <h4>Is Perfect Doors a Saudi-based or international brand?</h4>
+              <div class="faq-toggle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#82204F" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <p>Perfect Doors is a proudly Saudi-based company with deep roots in the Kingdom. Since our establishment in 2010, we have been serving the Saudi market with dedication. However, our global perspective comes from our exclusive partnerships with leading international European brands, bringing world-class quality to local projects.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <h4>What makes Perfect Doors different from other suppliers?</h4>
+              <div class="faq-toggle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#82204F" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <p>Our 15 years of industry experience, combined with our exclusive partnerships with premium European brands, sets us apart. We offer comprehensive solutions from toilet cubicles to laboratory furniture, backed by expert technical support and a commitment to quality that has earned the trust of over 700 clients across the region.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End FAQ Section -->
+
+  <!-- Start Newsletter Section -->
+  <section class="newsletter-section p-t-10 p-b-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="newsletter-content">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Join our monthly newsletter featuring advice, design inspiration, new products, and expert feedback to help you create sustainable, attractive, and high-performance projects.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+              <input type="email" placeholder="Enter your email address" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Newsletter Section -->
+
+  <!-- Start Work Process -->
+  <section class="process">
+    <div class="container p-tb-10">
+      <div class="row st-htext">
+        <h2>Work Process</h2>
+      </div>
+      <div class="row steps">
+        <div class="col-lg-4 col-sm-12 step">
+          <h2>01</h2>
+          <h4 data-aos="fade-up" data-aos-duration="1000">Strategy and Planning</h4>
+          <p>An interior design agency can create content that showcases</p>
+        </div>
+        <div class="col-lg-4 col-sm-12 step step-mid">
+          <h2>02</h2>
+          <h4 data-aos="fade-up" data-aos-duration="1200">Concept Design</h4>
+          <p>An interior design agency can create content that showcases</p>
+        </div>
+        <div class="col-lg-4 col-sm-12 step">
+          <h2>03</h2>
+          <h4 data-aos="fade-up" data-aos-duration="1400">Design Development</h4>
+          <p>An interior design agency can create content that showcases</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Work Process -->
+
+  <!-- Start Products -->
+  <section class="cs-services p-t-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <div class="service-harea">
+            <h2 class="wow animate__fadeInUp" data-wow-duration="0.7s"
+              style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">Our Premium Products</h2>
+            <div class="marquee-container">
+              <div class="marquee-text">
+                <span>Toilet Cubicles --</span>
+                <span>HPL Lockers --</span>
+                <span>Lab Furniture --</span>
+                <span>Wall Cladding --</span>
+                <span>Kitchen Solutions --</span>
+                <span>Benches & Tables --</span>
+              </div>
+            </div>
+            <a class="primary-btn" href="services.html">View All Products<svg width="15" height="8" viewBox="0 0 15 8"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.4273 4.55668C14.6225 4.36142 14.6225 4.04483 14.4273 3.84957L11.2453 0.667591C11.05 0.472329 10.7335 0.472329 10.5382 0.667591C10.3429 0.862853 10.3429 1.17944 10.5382 1.3747L13.3666 4.20312L10.5382 7.03155C10.3429 7.22681 10.3429 7.5434 10.5382 7.73866C10.7335 7.93392 11.05 7.93392 11.2453 7.73866L14.4273 4.55668ZM0.0737305 4.70312H14.0737V3.70312H0.0737305V4.70312Z"
+                  fill="white" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="services">
+            <!-- Item 1: Toilet Cubicles -->
+            <div class="service s-bg-1">
+              <h5>Toilet Cubicles</h5>
+              <p>Premium HPL restroom partitions for commercial spaces</p>
+              <div class="text-btn s-btn">
+                <a href="services.html">More</a>
+                <a href="services.html"><svg width="26" height="16" viewBox="0 0 26 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M24.7907 8.81648C25.1812 8.42596 25.1812 7.79279 24.7907 7.40227L18.4267 1.03831C18.0362 0.647783 17.403 0.647783 17.0125 1.03831C16.622 1.42883 16.622 2.062 17.0125 2.45252L22.6694 8.10938L17.0125 13.7662C16.622 14.1568 16.622 14.7899 17.0125 15.1804C17.403 15.571 18.0362 15.571 18.4267 15.1804L24.7907 8.81648ZM0.612854 9.10938H24.0836V7.10938H0.612854V9.10938Z"
+                      fill="white" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <!-- Item 2: Laboratory -->
+            <div class="service s-bg-3">
+              <h5>Lab Furniture</h5>
+              <p>Chemical resistant worktops and cabinetry</p>
+              <div class="text-btn s-btn">
+                <a href="services.html">More</a>
+                <a href="services.html"> <svg width="26" height="16" viewBox="0 0 26 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M24.7907 8.81648C25.1812 8.42596 25.1812 7.79279 24.7907 7.40227L18.4267 1.03831C18.0362 0.647783 17.403 0.647783 17.0125 1.03831C16.622 1.42883 16.622 2.062 17.0125 2.45252L22.6694 8.10938L17.0125 13.7662C16.622 14.1568 16.622 14.7899 17.0125 15.1804C17.403 15.571 18.0362 15.571 18.4267 15.1804L24.7907 8.81648ZM0.612854 9.10938H24.0836V7.10938H0.612854V9.10938Z"
+                      fill="white" />
+                  </svg></a>
+              </div>
+            </div>
+            <!-- Item 3: Kitchens -->
+            <div class="service s-bg-5">
+              <h5>Kitchen Solutions</h5>
+              <p>Durable countertops and moisture-proof cabinets</p>
+              <div class="text-btn s-btn">
+                <a href="services.html">More</a>
+                <a href="services.html"> <svg width="26" height="16" viewBox="0 0 26 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M24.7907 8.81648C25.1812 8.42596 25.1812 7.79279 24.7907 7.40227L18.4267 1.03831C18.0362 0.647783 17.403 0.647783 17.0125 1.03831C16.622 1.42883 16.622 2.062 17.0125 2.45252L22.6694 8.10938L17.0125 13.7662C16.622 14.1568 16.622 14.7899 17.0125 15.1804C17.403 15.571 18.0362 15.571 18.4267 15.1804L24.7907 8.81648ZM0.612854 9.10938H24.0836V7.10938H0.612854V9.10938Z"
+                      fill="white" />
+                  </svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="services">
+            <!-- Item 4: Lockers -->
+            <div class="service s-bg-2">
+              <h5>HPL Lockers</h5>
+              <p>Secure storage for gyms, schools, and offices</p>
+              <div class="text-btn s-btn">
+                <a href="services.html">More</a>
+                <a href="services.html"><svg width="26" height="16" viewBox="0 0 26 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M24.7907 8.81648C25.1812 8.42596 25.1812 7.79279 24.7907 7.40227L18.4267 1.03831C18.0362 0.647783 17.403 0.647783 17.0125 1.03831C16.622 1.42883 16.622 2.062 17.0125 2.45252L22.6694 8.10938L17.0125 13.7662C16.622 14.1568 16.622 14.7899 17.0125 15.1804C17.403 15.571 18.0362 15.571 18.4267 15.1804L24.7907 8.81648ZM0.612854 9.10938H24.0836V7.10938H0.612854V9.10938Z"
+                      fill="white" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <!-- Item 5: Wall Cladding -->
+            <div class="service s-bg-4">
+              <h5>Wall Cladding</h5>
+              <p>Interior and exterior HPL cladding solutions</p>
+              <div class="text-btn s-btn">
+                <a href="services.html">More</a>
+                <a href="services.html"> <svg width="26" height="16" viewBox="0 0 26 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M24.7907 8.81648C25.1812 8.42596 25.1812 7.79279 24.7907 7.40227L18.4267 1.03831C18.0362 0.647783 17.403 0.647783 17.0125 1.03831C16.622 1.42883 16.622 2.062 17.0125 2.45252L22.6694 8.10938L17.0125 13.7662C16.622 14.1568 16.622 14.7899 17.0125 15.1804C17.403 15.571 18.0362 15.571 18.4267 15.1804L24.7907 8.81648ZM0.612854 9.10938H24.0836V7.10938H0.612854V9.10938Z"
+                      fill="white" />
+                  </svg></a>
+              </div>
+            </div>
+            <!-- Item 6: Benches -->
+            <div class="service s-bg-6">
+              <h5>Benches & Tables</h5>
+              <p>Waterproof furniture for changing rooms and dining</p>
+              <div class="text-btn s-btn">
+                <a href="services.html">More</a>
+                <a href="services.html"> <svg width="26" height="16" viewBox="0 0 26 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M24.7907 8.81648C25.1812 8.42596 25.1812 7.79279 24.7907 7.40227L18.4267 1.03831C18.0362 0.647783 17.403 0.647783 17.0125 1.03831C16.622 1.42883 16.622 2.062 17.0125 2.45252L22.6694 8.10938L17.0125 13.7662C16.622 14.1568 16.622 14.7899 17.0125 15.1804C17.403 15.571 18.0362 15.571 18.4267 15.1804L24.7907 8.81648ZM0.612854 9.10938H24.0836V7.10938H0.612854V9.10938Z"
+                      fill="white" />
+                  </svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Products -->
+
+  <!-- Start Portfolio -->
+  <!-- <section class="p-tb-10">
+    <div class="container">
+      <div class="row">
+        <h2 class="p-b-3 cs-heading" data-aos="fade-up" data-aos-duration="1000">Design Made Real Showcasing Our Latest
+          Projects</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="project p-col-1">
+            <div class="p-cap">
+              <p>01</p>
+              <p>Interior – Luxury Living</p>
+            </div>
+            <div class="project-image">
+              <img src="assets/img/project-1.jpg" alt="">
+              <a href="portfolio-details.html">View Project</a>
+            </div>
+            <h5>Kawa - Glamorous Penthouse</h5>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="project p-col-2">
+            <div class="p-cap">
+              <p>02</p>
+              <p>Architecture – Urban Living</p>
+            </div>
+            <div class="project-image">
+              <img src="assets/img/project-2.jpg" alt="">
+              <a href="portfolio-details.html">View Project</a>
+            </div>
+            <h5>Dako - Sleek City Apartment</h5>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="project p-col-3">
+            <div class="p-cap">
+              <p>03</p>
+              <p>Architecture – Urban Living</p>
+            </div>
+            <div class="project-image">
+              <img src="assets/img/project-3.jpg" alt="">
+              <a href="portfolio-details.html">View Project</a>
+            </div>
+            <h5>Tabul - Industrial Chic Loft</h5>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="project-btn">
+          <a class="primary-btn" href="portfolio.html">VIEW ALL PROJECT <svg width="15" height="8" viewBox="0 0 15 8"
+              fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14.4273 4.55668C14.6225 4.36142 14.6225 4.04483 14.4273 3.84957L11.2453 0.667591C11.05 0.472329 10.7335 0.472329 10.5382 0.667591C10.3429 0.862853 10.3429 1.17944 10.5382 1.3747L13.3666 4.20312L10.5382 7.03155C10.3429 7.22681 10.3429 7.5434 10.5382 7.73866C10.7335 7.93392 11.05 7.93392 11.2453 7.73866L14.4273 4.55668ZM0.0737305 4.70312H14.0737V3.70312H0.0737305V4.70312Z"
+                fill="white" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End Portfolio -->
+
+  <!-- Start Testimonial -->
+  <!-- Testimonial Section Commented Out
+  <section class="sec-testi p-tb-10">
+    <div class="container">
+      <div class="owl-carousel owl-theme owl-loaded">
+        <div class="owl-stage-outer">
+          <div class="owl-stage">
+            <div class="owl-item">
+              <div class="testimonial-item row">
+                <div class="col-lg-4  col-sm-12">
+                  <img src="assets/img/testimonial_1.png" alt="James Stirling">
+                </div>
+                <div class="col-lg-7 offset-1 col-sm-12">
+                  <div class="testi-content">
+                    <svg width="101" height="89" viewBox="0 0 101 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.5"
+                        d="M80.1429 41.6574L80.1673 40.6336H79.1432H64.2206C61.9422 40.6336 60.0926 38.784 60.0926 36.5056V5.32723C60.0926 3.04885 61.9422 1.19922 64.2206 1.19922H95.399C97.6772 1.19922 99.527 3.04896 99.527 5.32723V29.8392C99.527 41.7955 98.4727 51.1392 96.4013 57.9363L97.3579 58.2278L96.4013 57.9363C94.3427 64.6917 90.5327 70.7633 84.9405 76.1643C80.3621 80.582 74.7341 84.2318 68.0393 87.1241C65.987 88.0094 63.6195 87.1237 62.6623 85.1104L58.9712 77.318C57.977 75.2135 58.9009 72.7074 61.013 71.7787L61.0147 71.778C66.8609 69.1948 71.3077 65.8884 74.2689 61.8328C78.0133 56.7082 79.9448 49.9573 80.1429 41.6574Z"
+                        stroke="#FF5101" stroke-width="2" />
+                      <path opacity="0.5"
+                        d="M23.0987 41.6574L23.1231 40.6336H22.099H7.17647C4.89807 40.6336 3.04845 38.784 3.04845 36.5056V5.32723C3.04845 3.04885 4.89809 1.19922 7.17647 1.19922H38.3548C40.6333 1.19922 42.4828 3.04884 42.4828 5.32723V29.8391C42.4828 41.8893 41.4282 51.2623 39.3578 58.0062C37.3003 64.7081 33.4714 70.759 27.8282 76.1609C23.2154 80.5728 17.6152 84.2232 11.0028 87.1048C8.95294 87.9975 6.56565 87.1042 5.60788 85.0898L1.92703 77.318C0.932811 75.2135 1.85672 72.7074 3.96884 71.7787L3.97051 71.778C9.81662 69.1948 14.2636 65.8884 17.2248 61.8328C20.9692 56.7082 22.9006 49.9573 23.0987 41.6574Z"
+                        stroke="#FF5101" stroke-width="2" />
+                    </svg>
+                    <p>"Perfect Doors impressed us with their attention to detail. The HPL partitions are not only
+                      durable but beautifully finished, fitting perfectly with our modern design aesthetic. The
+                      installation team was professional and efficient."</p>
+                    <span></span>
+                    <div class="client-details">
+                      <h5>James Stirling</h5>
+                      <p>Senior Architect</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="owl-item">
+              <div class="testimonial-item row">
+                <div class="col-lg-4  col-sm-12">
+                  <img src="assets/img/testimonial_2.png" alt="Sarah Connor">
+                </div>
+                <div class="col-lg-7 offset-1 col-sm-12">
+                  <div class="testi-content">
+                    <svg width="101" height="89" viewBox="0 0 101 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.5"
+                        d="M80.1429 41.6574L80.1673 40.6336H79.1432H64.2206C61.9422 40.6336 60.0926 38.784 60.0926 36.5056V5.32723C60.0926 3.04885 61.9422 1.19922 64.2206 1.19922H95.399C97.6772 1.19922 99.527 3.04896 99.527 5.32723V29.8392C99.527 41.7955 98.4727 51.1392 96.4013 57.9363L97.3579 58.2278L96.4013 57.9363C94.3427 64.6917 90.5327 70.7633 84.9405 76.1643C80.3621 80.582 74.7341 84.2318 68.0393 87.1241C65.987 88.0094 63.6195 87.1237 62.6623 85.1104L58.9712 77.318C57.977 75.2135 58.9009 72.7074 61.013 71.7787L61.0147 71.778C66.8609 69.1948 71.3077 65.8884 74.2689 61.8328C78.0133 56.7082 79.9448 49.9573 80.1429 41.6574Z"
+                        stroke="#FF5101" stroke-width="2" />
+                      <path opacity="0.5"
+                        d="M23.0987 41.6574L23.1231 40.6336H22.099H7.17647C4.89807 40.6336 3.04845 38.784 3.04845 36.5056V5.32723C3.04845 3.04885 4.89809 1.19922 7.17647 1.19922H38.3548C40.6333 1.19922 42.4828 3.04884 42.4828 5.32723V29.8391C42.4828 41.8893 41.4282 51.2623 39.3578 58.0062C37.3003 64.7081 33.4714 70.759 27.8282 76.1609C23.2154 80.5728 17.6152 84.2232 11.0028 87.1048C8.95294 87.9975 6.56565 87.1042 5.60788 85.0898L1.92703 77.318C0.932811 75.2135 1.85672 72.7074 3.96884 71.7787L3.97051 71.778C9.81662 69.1948 14.2636 65.8884 17.2248 61.8328C20.9692 56.7082 22.9006 49.9573 23.0987 41.6574Z"
+                        stroke="#FF5101" stroke-width="2" />
+                    </svg>
+                    <p>"We needed robust lockers for our gym facility that could withstand heavy daily use. The HPL
+                      lockers provided by Perfect Doors are incredibly sturdy, water-resistant, and look fantastic.
+                      Highly recommended for high-traffic areas."</p>
+                    <span></span>
+                    <div class="client-details">
+                      <h5>Sarah Connor</h5>
+                      <p>Facility Manager</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="owl-item">
+              <div class="testimonial-item row">
+                <div class="col-lg-4  col-sm-12">
+                  <img src="assets/img/testimonial_3.png" alt="Michael Chen">
+                </div>
+                <div class="col-lg-7 offset-1 col-sm-12">
+                  <div class="testi-content">
+                    <svg width="101" height="89" viewBox="0 0 101 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.5"
+                        d="M80.1429 41.6574L80.1673 40.6336H79.1432H64.2206C61.9422 40.6336 60.0926 38.784 60.0926 36.5056V5.32723C60.0926 3.04885 61.9422 1.19922 64.2206 1.19922H95.399C97.6772 1.19922 99.527 3.04896 99.527 5.32723V29.8392C99.527 41.7955 98.4727 51.1392 96.4013 57.9363L97.3579 58.2278L96.4013 57.9363C94.3427 64.6917 90.5327 70.7633 84.9405 76.1643C80.3621 80.582 74.7341 84.2318 68.0393 87.1241C65.987 88.0094 63.6195 87.1237 62.6623 85.1104L58.9712 77.318C57.977 75.2135 58.9009 72.7074 61.013 71.7787L61.0147 71.778C66.8609 69.1948 71.3077 65.8884 74.2689 61.8328C78.0133 56.7082 79.9448 49.9573 80.1429 41.6574Z"
+                        stroke="#FF5101" stroke-width="2" />
+                      <path opacity="0.5"
+                        d="M23.0987 41.6574L23.1231 40.6336H22.099H7.17647C4.89807 40.6336 3.04845 38.784 3.04845 36.5056V5.32723C3.04845 3.04885 4.89809 1.19922 7.17647 1.19922H38.3548C40.6333 1.19922 42.4828 3.04884 42.4828 5.32723V29.8391C42.4828 41.8893 41.4282 51.2623 39.3578 58.0062C37.3003 64.7081 33.4714 70.759 27.8282 76.1609C23.2154 80.5728 17.6152 84.2232 11.0028 87.1048C8.95294 87.9975 6.56565 87.1042 5.60788 85.0898L1.92703 77.318C0.932811 75.2135 1.85672 72.7074 3.96884 71.7787L3.97051 71.778C9.81662 69.1948 14.2636 65.8884 17.2248 61.8328C20.9692 56.7082 22.9006 49.9573 23.0987 41.6574Z"
+                        stroke="#FF5101" stroke-width="2" />
+                    </svg>
+                    <p>"From lab benches to wall cladding, the product quality is consistent and premium. Technical
+                      support during the specification phase was excellent, helping us choose the right materials for
+                      our specific needs."</p>
+                    <span></span>
+                    <div class="client-details">
+                      <h5>Michael Chen</h5>
+                      <p>Project Director</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+  </div>
+  </div>
+  <div class="t-arrow">
+    <div class="customNextBtn">
+      <div class="left">
+        <svg width="98" height="97" viewBox="0 0 98 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="48.3649" cy="48.3649" r="47.8649" transform="matrix(-1 0 0 1 97.5783 0.147461)"
+            stroke="#555555" />
+          <path d="M57.9191 63.595L40.5078 48.8995L57.9191 33.4302" stroke="#555555" />
+        </svg>
+      </div>
+    </div>
+    <div class="customPreviousBtn">
+      <div class="right">
+        <svg width="97" height="97" viewBox="0 0 97 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="48.6351" cy="48.5128" r="47.8649" stroke="#555555" />
+          <path d="M39.9295 63.595L57.3408 48.8995L39.9295 33.4302" stroke="#555555" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  -->
+  <!-- Start Testimonial -->
+
+  <!-- Start Client -->
+  <section class="p-t-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h4>700+ Our Trusted Client</h4>
+        </div>
+        <div class="col-lg-8">
+          <div class="client-slider">
+            <div class="owl-carousel-client owl-theme owl-loaded">
+              <div class="owl-stage-outer cs-client-image">
+                <div class="owl-stage">
+                  <img class="owl-item client-image" src="assets/img/AEdesko.png" alt="">
+                  <img class="owl-item client-image" src="assets/img/Sdako.png" alt="">
+                  <img class="owl-item client-image" src="assets/img/AMmarso.png" alt="">
+                  <img class="owl-item client-image" src="assets/img/AEdesko.png" alt="">
+                  <img class="owl-item client-image" src="assets/img/Sdako.png" alt="">
+                  <img class="owl-item client-image" src="assets/img/AEdesko.png" alt="">
+                  <img class="owl-item client-image" src="assets/img/Sdako.png" alt="">
+                  <img class="owl-item client-image" src="assets/img/AMmarso.png" alt="">
+                  <img class="owl-item client-image" src="assets/img/AEdesko.png" alt="">
+                  <img class="owl-item client-image" src="assets/img/Sdako.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Client -->
+
+  <!-- Start Team -->
+  <!-- <section class="p-t-10">
+    <div class="container">
+      <div class="row t-content">
+        <div class="col-lg-4 cs-t-head col-sm-6">
+          <div class="caption">
+            <p><span>Team</span></p>
+          </div>
+          <h3 class="wow animate__fadeInUp" data-wow-duration="0.5s">Meet Our</h3>
+          <h2 class="wow animate__fadeInUp" data-wow-duration="0.7s">Leadership</h2>
+        </div>
+        <div class="members members-main-page col-lg-8 m-12 col-sm-12">
+          <div class="member member-main-page">
+            <div class="tm-img-box">
+              <img src="assets/img/member-1.jpg" alt="">
+              <ul>
+                <li><a href="#"><svg width="12" height="20" viewBox="0 0 12 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M3.19873 19.5H7.19873V11.49H10.8027L11.1987 7.51H7.19873V5.5C7.19873 5.23478 7.30409 4.98043 7.49163 4.79289C7.67916 4.60536 7.93352 4.5 8.19873 4.5H11.1987V0.5H8.19873C6.87265 0.5 5.60088 1.02678 4.6632 1.96447C3.72552 2.90215 3.19873 4.17392 3.19873 5.5V7.51H1.19873L0.802734 11.49H3.19873V19.5Z"
+                        fill="white" />
+                    </svg></a></li>
+                <li><a href="#"><svg width="16" height="20" viewBox="0 0 24 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M7.547 19.2508C16.604 19.2508 21.557 11.9406 21.557 5.60087C21.557 5.39335 21.557 5.1868 21.543 4.98122C22.5069 4.3018 23.3389 3.4605 24 2.49676C23.1015 2.88517 22.1482 3.14002 21.172 3.25281C22.1997 2.65294 22.9687 1.70979 23.336 0.598824C22.3697 1.15753 21.3124 1.55129 20.21 1.76311C19.4675 0.993944 18.4856 0.48462 17.4161 0.31395C16.3466 0.14328 15.2492 0.320779 14.2937 0.818981C13.3382 1.31718 12.5779 2.10831 12.1303 3.06996C11.6828 4.0316 11.573 5.11014 11.818 6.13868C9.8604 6.04309 7.94532 5.5475 6.19705 4.68408C4.44877 3.82066 2.90639 2.60871 1.67 1.12689C1.04049 2.1831 0.84778 3.43334 1.1311 4.6231C1.41442 5.81287 2.15247 6.85271 3.195 7.53096C2.41129 7.50816 1.64472 7.30198 0.96 6.92981V6.9912C0.96031 8.09878 1.3538 9.17217 2.07373 10.0293C2.79367 10.8865 3.79573 11.4747 4.91 11.6941C4.18515 11.8865 3.42469 11.9145 2.687 11.776C3.0016 12.7292 3.61411 13.5629 4.43888 14.1603C5.26365 14.7578 6.25944 15.0891 7.287 15.1081C6.26601 15.8896 5.09691 16.4675 3.84655 16.8085C2.59619 17.1496 1.28909 17.2471 0 17.0956C2.25155 18.5038 4.87147 19.251 7.547 19.2479"
+                        fill="white" />
+                    </svg></a></li>
+                <li><a href="#"><svg width="16" height="20" viewBox="0 0 22 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M5.16144 2.31957C5.16116 2.87944 4.93849 3.41627 4.5424 3.81196C4.14631 4.20765 3.60926 4.42979 3.04939 4.42951C2.48952 4.42923 1.95269 4.20655 1.557 3.81047C1.16131 3.41438 0.939173 2.87733 0.939453 2.31746C0.939733 1.75759 1.16241 1.22076 1.5585 0.825069C1.95458 0.429379 2.49163 0.20724 3.0515 0.20752C3.61137 0.2078 4.1482 0.430476 4.54389 0.826562C4.93958 1.22265 5.16172 1.7597 5.16144 2.31957ZM5.22477 5.9927H1.00278V19.2075H5.22477V5.9927ZM11.8955 5.9927H7.69463V19.2075H11.8533V12.2729C11.8533 8.40979 16.888 8.05092 16.888 12.2729V19.2075H21.0572V10.8374C21.0572 4.32501 13.6054 4.56778 11.8533 7.76593L11.8955 5.9927Z"
+                        fill="white" />
+                    </svg></a></li>
+              </ul>
+            </div>
+            <h5>Saint David Hume</h5>
+            <p>Managing Director</p>
+          </div>
+          <div class="member t-mid member-main-page">
+            <div class="tm-img-box">
+              <img src="assets/img/member-2.jpg" alt="">
+              <ul>
+                <li><a href="#"><svg width="12" height="20" viewBox="0 0 12 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M3.19873 19.5H7.19873V11.49H10.8027L11.1987 7.51H7.19873V5.5C7.19873 5.23478 7.30409 4.98043 7.49163 4.79289C7.67916 4.60536 7.93352 4.5 8.19873 4.5H11.1987V0.5H8.19873C6.87265 0.5 5.60088 1.02678 4.6632 1.96447C3.72552 2.90215 3.19873 4.17392 3.19873 5.5V7.51H1.19873L0.802734 11.49H3.19873V19.5Z"
+                        fill="white" />
+                    </svg></a></li>
+                <li><a href="#"><svg width="16" height="20" viewBox="0 0 24 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M7.547 19.2508C16.604 19.2508 21.557 11.9406 21.557 5.60087C21.557 5.39335 21.557 5.1868 21.543 4.98122C22.5069 4.3018 23.3389 3.4605 24 2.49676C23.1015 2.88517 22.1482 3.14002 21.172 3.25281C22.1997 2.65294 22.9687 1.70979 23.336 0.598824C22.3697 1.15753 21.3124 1.55129 20.21 1.76311C19.4675 0.993944 18.4856 0.48462 17.4161 0.31395C16.3466 0.14328 15.2492 0.320779 14.2937 0.818981C13.3382 1.31718 12.5779 2.10831 12.1303 3.06996C11.6828 4.0316 11.573 5.11014 11.818 6.13868C9.8604 6.04309 7.94532 5.5475 6.19705 4.68408C4.44877 3.82066 2.90639 2.60871 1.67 1.12689C1.04049 2.1831 0.84778 3.43334 1.1311 4.6231C1.41442 5.81287 2.15247 6.85271 3.195 7.53096C2.41129 7.50816 1.64472 7.30198 0.96 6.92981V6.9912C0.96031 8.09878 1.3538 9.17217 2.07373 10.0293C2.79367 10.8865 3.79573 11.4747 4.91 11.6941C4.18515 11.8865 3.42469 11.9145 2.687 11.776C3.0016 12.7292 3.61411 13.5629 4.43888 14.1603C5.26365 14.7578 6.25944 15.0891 7.287 15.1081C6.26601 15.8896 5.09691 16.4675 3.84655 16.8085C2.59619 17.1496 1.28909 17.2471 0 17.0956C2.25155 18.5038 4.87147 19.251 7.547 19.2479"
+                        fill="white" />
+                    </svg></a></li>
+                <li><a href="#"><svg width="16" height="20" viewBox="0 0 22 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M5.16144 2.31957C5.16116 2.87944 4.93849 3.41627 4.5424 3.81196C4.14631 4.20765 3.60926 4.42979 3.04939 4.42951C2.48952 4.42923 1.95269 4.20655 1.557 3.81047C1.16131 3.41438 0.939173 2.87733 0.939453 2.31746C0.939733 1.75759 1.16241 1.22076 1.5585 0.825069C1.95458 0.429379 2.49163 0.20724 3.0515 0.20752C3.61137 0.2078 4.1482 0.430476 4.54389 0.826562C4.93958 1.22265 5.16172 1.7597 5.16144 2.31957ZM5.22477 5.9927H1.00278V19.2075H5.22477V5.9927ZM11.8955 5.9927H7.69463V19.2075H11.8533V12.2729C11.8533 8.40979 16.888 8.05092 16.888 12.2729V19.2075H21.0572V10.8374C21.0572 4.32501 13.6054 4.56778 11.8533 7.76593L11.8955 5.9927Z"
+                        fill="white" />
+                    </svg></a></li>
+              </ul>
+            </div>
+            <h5>David Hume</h5>
+            <p>UI/UX Designer</p>
+          </div>
+          <div class="member member-main-page">
+            <div class="tm-img-box">
+              <img src="assets/img/member-3.jpg" alt="">
+              <ul>
+                <li><a href="#"><svg width="12" height="20" viewBox="0 0 12 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M3.19873 19.5H7.19873V11.49H10.8027L11.1987 7.51H7.19873V5.5C7.19873 5.23478 7.30409 4.98043 7.49163 4.79289C7.67916 4.60536 7.93352 4.5 8.19873 4.5H11.1987V0.5H8.19873C6.87265 0.5 5.60088 1.02678 4.6632 1.96447C3.72552 2.90215 3.19873 4.17392 3.19873 5.5V7.51H1.19873L0.802734 11.49H3.19873V19.5Z"
+                        fill="white" />
+                    </svg></a></li>
+                <li><a href="#"><svg width="16" height="20" viewBox="0 0 24 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M7.547 19.2508C16.604 19.2508 21.557 11.9406 21.557 5.60087C21.557 5.39335 21.557 5.1868 21.543 4.98122C22.5069 4.3018 23.3389 3.4605 24 2.49676C23.1015 2.88517 22.1482 3.14002 21.172 3.25281C22.1997 2.65294 22.9687 1.70979 23.336 0.598824C22.3697 1.15753 21.3124 1.55129 20.21 1.76311C19.4675 0.993944 18.4856 0.48462 17.4161 0.31395C16.3466 0.14328 15.2492 0.320779 14.2937 0.818981C13.3382 1.31718 12.5779 2.10831 12.1303 3.06996C11.6828 4.0316 11.573 5.11014 11.818 6.13868C9.8604 6.04309 7.94532 5.5475 6.19705 4.68408C4.44877 3.82066 2.90639 2.60871 1.67 1.12689C1.04049 2.1831 0.84778 3.43334 1.1311 4.6231C1.41442 5.81287 2.15247 6.85271 3.195 7.53096C2.41129 7.50816 1.64472 7.30198 0.96 6.92981V6.9912C0.96031 8.09878 1.3538 9.17217 2.07373 10.0293C2.79367 10.8865 3.79573 11.4747 4.91 11.6941C4.18515 11.8865 3.42469 11.9145 2.687 11.776C3.0016 12.7292 3.61411 13.5629 4.43888 14.1603C5.26365 14.7578 6.25944 15.0891 7.287 15.1081C6.26601 15.8896 5.09691 16.4675 3.84655 16.8085C2.59619 17.1496 1.28909 17.2471 0 17.0956C2.25155 18.5038 4.87147 19.251 7.547 19.2479"
+                        fill="white" />
+                    </svg></a></li>
+                <li><a href="#"><svg width="16" height="20" viewBox="0 0 22 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M5.16144 2.31957C5.16116 2.87944 4.93849 3.41627 4.5424 3.81196C4.14631 4.20765 3.60926 4.42979 3.04939 4.42951C2.48952 4.42923 1.95269 4.20655 1.557 3.81047C1.16131 3.41438 0.939173 2.87733 0.939453 2.31746C0.939733 1.75759 1.16241 1.22076 1.5585 0.825069C1.95458 0.429379 2.49163 0.20724 3.0515 0.20752C3.61137 0.2078 4.1482 0.430476 4.54389 0.826562C4.93958 1.22265 5.16172 1.7597 5.16144 2.31957ZM5.22477 5.9927H1.00278V19.2075H5.22477V5.9927ZM11.8955 5.9927H7.69463V19.2075H11.8533V12.2729C11.8533 8.40979 16.888 8.05092 16.888 12.2729V19.2075H21.0572V10.8374C21.0572 4.32501 13.6054 4.56778 11.8533 7.76593L11.8955 5.9927Z"
+                        fill="white" />
+                    </svg></a></li>
+              </ul>
+            </div>
+            <h5>Ralph Waldoe</h5>
+            <p>Financial Officer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End Team -->
+
+  <!-- Start Fun Fact -->
+  <div class="cs-funfact">
+    <div class="p-tb-10">
+      <div class="container">
+        <div class="row fun-head">
+          <div class="col-lg-8 col-sm-12">
+            <h2 class="wow animate__fadeInUp" data-wow-duration="0.7s">Milestones that We Are Proud of Reaching</h2>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <p>An interior design agency can create content that showcases its work, highlights design trends, and
+              provides educational resources for clients and followers. Some potential ideas for an agency</p>
+          </div>
+        </div>
+        <div class="row item-container">
+          <div class="col-lg-4 col-sm-6">
+            <div class="fun-item">
+              <p class="count" data-target="254">0</p>
+              <p>+</p>
+              <h5>Successful Project Done</h5>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="fun-item">
+              <p class="count" data-target="154">0</p>
+              <p>+</p>
+              <h5>Delightful Clients</h5>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="fun-item">
+              <p class="count" data-target="145">0</p>
+              <p>+</p>
+              <h5>Award Achivement</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Fun Fact -->
+
+  <!-- Start CTA -->
+  <section>
+    <div class="cta text-center">
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="wow animate__fadeInUp" data-wow-duration="0.7s">Ready to Work Together?</h2>
+          <p class="p-b-2">An interior design agency can create content that showcases its work, highlights design
+            trends, and provides educational resources for clients and followers. Some potential content ideas for an
+            interior design agency. An interior design agency can create content that showcases its work</p>
+          <div class="p-t-1">
+            <a class="primary-btn" href="contact-us.html">Build Together <svg width="15" height="8" viewBox="0 0 15 8"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.4273 4.55668C14.6225 4.36142 14.6225 4.04483 14.4273 3.84957L11.2453 0.667591C11.05 0.472329 10.7335 0.472329 10.5382 0.667591C10.3429 0.862853 10.3429 1.17944 10.5382 1.3747L13.3666 4.20312L10.5382 7.03155C10.3429 7.22681 10.3429 7.5434 10.5382 7.73866C10.7335 7.93392 11.05 7.93392 11.2453 7.73866L14.4273 4.55668ZM0.0737305 4.70312H14.0737V3.70312H0.0737305V4.70312Z"
+                  fill="white" />
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Start CTA -->
+
+  <!-- Start Blog -->
+  <!-- <section>
+    <div class="h-blog">
+      <div class="container">
+        <div class="blog-content p-tb-10">
+          <div class="p-b-3 ha-blog">
+            <h2 class="wow animate__fadeInUp" data-wow-duration="0.7s">Sharing Our Knowledge and Passion for Interiors
+            </h2>
+            <a class="primary-btn" href="blog.html"> View All Blog <svg width="15" height="8" viewBox="0 0 15 8"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.4273 4.55668C14.6225 4.36142 14.6225 4.04483 14.4273 3.84957L11.2453 0.667591C11.05 0.472329 10.7335 0.472329 10.5382 0.667591C10.3429 0.862853 10.3429 1.17944 10.5382 1.3747L13.3666 4.20312L10.5382 7.03155C10.3429 7.22681 10.3429 7.5434 10.5382 7.73866C10.7335 7.93392 11.05 7.93392 11.2453 7.73866L14.4273 4.55668ZM0.0737305 4.70312H14.0737V3.70312H0.0737305V4.70312Z"
+                  fill="white" />
+              </svg></a>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="p-box box-inner box-inner-1">
+                <h5><a href="blog-details.html">Sustainable Design: How to Create an…</a></h5>
+                <span class="b-border"></span>
+                <p class="p-t-2">An interior design agency can create content that showcases its…</p>
+                <div class="text-btn p-t-1">
+                  <a href="blog-details.html">Read More <svg width="15" height="12" viewBox="0 0 15 8" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M14.4273 4.55668C14.6225 4.36142 14.6225 4.04483 14.4273 3.84957L11.2453 0.667591C11.05 0.472329 10.7335 0.472329 10.5382 0.667591C10.3429 0.862853 10.3429 1.17944 10.5382 1.3747L13.3666 4.20312L10.5382 7.03155C10.3429 7.22681 10.3429 7.5434 10.5382 7.73866C10.7335 7.93392 11.05 7.93392 11.2453 7.73866L14.4273 4.55668ZM0.0737305 4.70312H14.0737V3.70312H0.0737305V4.70312Z"
+                        fill="white" />
+                    </svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="p-box box-inner box-inner-2">
+                <h5><a href="blog-details.html">The Art of Accessorizing: Adding the…</a></h5>
+                <span class="b-border"></span>
+                <p class="p-t-2">An interior design agency can create content that showcases its…</p>
+                <div class="text-btn p-t-1">
+                  <a href="blog-details.html">Read More <svg width="15" height="8" viewBox="0 0 15 8" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M14.4273 4.55668C14.6225 4.36142 14.6225 4.04483 14.4273 3.84957L11.2453 0.667591C11.05 0.472329 10.7335 0.472329 10.5382 0.667591C10.3429 0.862853 10.3429 1.17944 10.5382 1.3747L13.3666 4.20312L10.5382 7.03155C10.3429 7.22681 10.3429 7.5434 10.5382 7.73866C10.7335 7.93392 11.05 7.93392 11.2453 7.73866L14.4273 4.55668ZM0.0737305 4.70312H14.0737V3.70312H0.0737305V4.70312Z"
+                        fill="white" />
+                    </svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="p-box box-inner box-inner-3">
+                <h5><a href="blog-details.html">Color Psychology in Interior Design: How…</a></h5>
+                <span class="b-border"></span>
+                <p class="p-t-2">An interior design agency can create content that showcases its…</p>
+                <div class="text-btn p-t-1">
+                  <a href="blog-details.html">Read More <svg width="15" height="8" viewBox="0 0 15 8" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M14.4273 4.55668C14.6225 4.36142 14.6225 4.04483 14.4273 3.84957L11.2453 0.667591C11.05 0.472329 10.7335 0.472329 10.5382 0.667591C10.3429 0.862853 10.3429 1.17944 10.5382 1.3747L13.3666 4.20312L10.5382 7.03155C10.3429 7.22681 10.3429 7.5434 10.5382 7.73866C10.7335 7.93392 11.05 7.93392 11.2453 7.73866L14.4273 4.55668ZM0.0737305 4.70312H14.0737V3.70312H0.0737305V4.70312Z"
+                        fill="white" />
+                    </svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- Start Blog -->
+
+  <!-- Start Footer -->
+  <footer class="cs-footer p-t-10 p-b-2">
+    <div class="container">
+      <div class="row">
+        <!-- Company Info -->
+        <div class="col-lg-3 col-sm-12 cs-footer-item1">
+          <div class="footer-item">
+            <div class="p-b-2 wow animate__fadeInUp" data-wow-duration="0.5s">
+              <img src="assets/img/logo.png" alt="">
+            </div>
+            <h6>Corporate Office</h6>
+            <p class="f-address" style="font-size: 1rem;">8th Floor, Al Salhya New Building, King Fahad Road, Al Wisham, Riyadh, Saudi Arabia</p>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="col-lg-2 col-sm-6">
+          <div class="footer-item">
+            <h5>Services</h5>
+            <ul class="p-t-1">
+              <li><a href="services.html">Toilet Cubicles</a></li>
+              <li><a href="services.html">HPL Lockers</a></li>
+              <li><a href="services.html">Lab Furniture</a></li>
+              <li><a href="services.html">Wall Cladding</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-sm-6">
+          <div class="footer-item">
+            <h5>Legal</h5>
+            <ul class="p-t-1">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-sm-6">
+          <div class="footer-item">
+            <h5>Business Values</h5>
+            <ul class="p-t-1">
+              <li><a href="about.html">Our Mission</a></li>
+              <li><a href="about.html">Our Vision</a></li>
+              <li><a href="about.html">Quality Standards</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-sm-6">
+          <div class="footer-item">
+            <h5>Careers</h5>
+            <ul class="p-t-1">
+              <li><a href="#">Current Openings</a></li>
+              <li><a href="#">Internship Program</a></li>
+              <li><a href="#">Apply Now</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact & Documentation -->
+        <div class="col-lg-3 col-sm-12">
+          <div class="footer-item">
+            <div class="f-contact-info">
+              <h6>Contact Us</h6>
+              <h3 class="f-number wow animate__fadeInUp" data-wow-duration="0.5s" style="font-size: 1.8rem;">+966 11 27 66 37 6</h3>
+              <div class="m-t-1rem p-tb-2 f-number wow animate__fadeInUp" data-wow-duration="0.9s">
+                <h6 style="margin-bottom: 5px;">Live Chat</h6>
+                <span class="f-mail" style="font-size: 1.2rem;">Available 24/7</span>
+              </div>
+              <div class="m-t-1rem">
+                <h6 style="margin-bottom: 10px;">Documentation</h6>
+                <ul style="margin: 0; padding: 0; list-style: none;">
+                  <li style="padding-bottom: 8px;"><a href="#" style="color: #d0d0d0; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#82204F" stroke-width="2">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Company Profile
+                  </a></li>
+                  <li style="padding-bottom: 8px;"><a href="#" style="color: #d0d0d0; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#82204F" stroke-width="2">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Product Catalog
+                  </a></li>
+                  <li><a href="#" style="color: #d0d0d0; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#82204F" stroke-width="2">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Healthcare Sector Docs
+                  </a></li>
+                </ul>
+              </div>
+              <div class="f-copy" style="margin-top: 20px;">
+                <p>© 2026 Perfect Doors Company. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Start Scroll To Top -->
+  <a class="to-top" href="#">
+    <svg width="70" height="70" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="49.0645" cy="49.1549" r="47.8649" stroke="#393939" />
+      <path d="M64.1471 57.8606L49.4516 40.4492L33.9823 57.8606" stroke="#CCCCCC" />
+    </svg>
+  </a>
+  <!-- End Scroll To Top -->
+
+  <!-- Script -->
+  <script src="assets/js/plugins/jQuery-3.6.0.min.js"></script>
+  <script src="assets/js/plugins/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/owl.carousel.min.js"></script>
+  <script src="assets/js/plugins/counter.js"></script>
+  <script src="assets/js/plugins/anime.min.js"></script>
+  <script src="assets/js/plugins/wow.min.js"></script>
+  <script src="assets/js/plugins/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/language-switcher.js"></script>
+
+  <!-- Initial Popup Script -->
+  <script>
+    function closePopup() {
+      const popup = document.getElementById('initial-popup');
+      popup.classList.remove('show');
+      localStorage.setItem('popupShown', 'true');
+    }
+
+    window.addEventListener('load', function() {
+      const popupShown = localStorage.getItem('popupShown');
+      if (!popupShown) {
+        setTimeout(function() {
+          const popup = document.getElementById('initial-popup');
+          popup.classList.add('show');
+        }, 1500);
+      }
+    });
+
+    function toggleFaq(element) {
+      const faqItem = element.parentElement;
+      const isActive = faqItem.classList.contains('active');
+
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    }
+  </script>
+  <!-- Script -->
+
+</body>
+
+</html>
